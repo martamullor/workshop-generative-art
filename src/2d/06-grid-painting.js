@@ -3,6 +3,13 @@ const { lerp } = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 const palettes = require('nice-color-palettes/1000.json');
 
+let palette = random.pick(palettes);
+
+palette = random.shuffle(palette);
+palette = palette.slice(0, random.rangeFloor(2, palette.length + 1));
+
+// const background = palette.shift();
+
 const settings = {
   dimensions: [ 2048, 2048 ]
 };
@@ -12,8 +19,9 @@ const sketch = ({ width, height }) => {
   const margin = width * 0.15;
   const maxColors = random.rangeFloor(2, 6);
   const fontFamily = '"Andale Mono"';
-  const palette = random.shuffle(random.pick(palettes)).slice(0, maxColors);
-  const background = 'hsl(0, 0%, 94%)';
+  // const palette = random.shuffle(random.pick(palettes)).slice(0, maxColors);
+  const palette= ['#b6c977','#28303b','#d9d3c0','#ee834c']
+  const background = 'white';
   const characters = '=.'.split('');
 
   const createGrid = () => {

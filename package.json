@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "canvas-sketch sketch.js  --open"
+  },
   "keywords": [],
   "author": "Matt DesLauriers <dave.des@gmail.com>",
   "dependencies": {
